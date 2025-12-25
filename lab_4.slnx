@@ -1,0 +1,33 @@
+<Solution>
+  <Folder Name="/lab4_1/">
+    <Project Path="lab_4/lab_4_1.csproj" />
+  </Folder>
+  <Folder Name="/lab4_10/">
+    <Project Path="lab_4_10/lab_4_10.csproj" Id="92e564ad-448b-4bb8-a911-ea3d92687b97" />
+  </Folder>
+  <Folder Name="/lab4_2/">
+    <Project Path="lab_4_2/lab_4_2.csproj" />
+  </Folder>
+  <Folder Name="/lab4_3/">
+    <Project Path="lab_4_3/lab_4_3.csproj" />
+    <Project Path="TestProject1/TestProject1.csproj" Id="ec493807-5a21-47f1-ba70-5002c7ce8000" />
+  </Folder>
+  <Folder Name="/lab4_4/">
+    <Project Path="lab_4_4/lab_4_4.csproj" Id="a1a163cb-ed7e-4374-bde2-c00e8709536e" />
+  </Folder>
+  <Folder Name="/lab4_5/">
+    <Project Path="lab_4_5/lab_4_5.csproj" Id="4769b12d-471a-4854-9a89-e82b36c575f9" />
+  </Folder>
+  <Folder Name="/lab4_6/">
+    <Project Path="lab_4_6/lab_4_6.csproj" Id="738d9453-4ad8-43ad-bebc-7b28ca9b1da1" />
+  </Folder>
+  <Folder Name="/lab4_7/">
+    <Project Path="lab_4_7/lab_4_7.csproj" Id="1eeedc28-4fe9-422c-9350-710d56f51ccd" />
+  </Folder>
+  <Folder Name="/lab4_8/">
+    <Project Path="lab_4_8/lab_4_8.csproj" Id="5b9655e6-01aa-4e05-bc7b-396675ea681e" />
+  </Folder>
+  <Folder Name="/lab4_9/">
+    <Project Path="lab_4_9/lab_4_9.csproj" Id="244aba4f-a6fb-4b80-8053-32833cdafd1c" />
+  </Folder>
+</Solution>
