@@ -53,19 +53,24 @@ namespace lab_4_8
             }
         }
     };
-        static string GenerateThink(TypeThink type)
+        public static Think GenerateThink()
         {
-            var templates = thoughtTemplates[type];
-            int index = rnd.Next(0, 4);
-            return templates[index];
+            Array values = Enum.GetValues(typeof(TypeThink));
+            TypeThink randomType = (TypeThink)values.GetValue(rnd.Next(values.Length));
+
+            string[] templates = thoughtTemplates[randomType];
+            int index = rnd.Next(templates.Length);
+            string content = templates[index];
+
+            Think think = new Think();
+            think.Type = randomType;
+            think.Content = content;
+
+            return think;
         }
         public TypeThink Type {get; set;}
         public string Content { get; set;}
-        public Think(TypeThink type)
-        {
-            Type = type;
-            Content = GenerateThink(type);
-        }
+
         public bool GetDecision()
         {
             switch (Type)

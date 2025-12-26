@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Queue<Student> KickFromUniversity = new Queue<Student>();
+
             for(int i = 0; i < 10; i++ )
             {
                 Student student = Student.GenerateStudent();

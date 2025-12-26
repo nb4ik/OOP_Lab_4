@@ -26,6 +26,7 @@
   </Folder>
   <Folder Name="/lab4_8/">
     <Project Path="lab_4_8/lab_4_8.csproj" Id="5b9655e6-01aa-4e05-bc7b-396675ea681e" />
+    <Project Path="TestLab4_8/TestLab4_8.csproj" Id="d2e3920d-47cf-4f8a-a549-7da56d9395f2" />
   </Folder>
   <Folder Name="/lab4_9/">
     <Project Path="lab_4_9/lab_4_9.csproj" Id="244aba4f-a6fb-4b80-8053-32833cdafd1c" />

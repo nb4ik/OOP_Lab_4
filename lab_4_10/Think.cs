@@ -8,13 +8,18 @@ using System.Threading.Tasks;
 
 namespace lab_4_10
 {
+    interface IThink
+    {
+        string GetThinkInfo();
+        bool GetDecision();
+    }
     public enum TypeThink
     {
         Food = 1,
         Games = 2,
         Study = 3
     }
-    public class Think
+    public class Think : IThink
     {
         private static Random rnd = new Random();
 
@@ -27,7 +32,6 @@ namespace lab_4_10
                 "Пора сделать домашнее задание",
                 "Может не идти на лекцию?",
                 "Может, почитать что-то полезное?",
-                "Физика это хорошо"
             }
         },
         {
@@ -37,7 +41,6 @@ namespace lab_4_10
                 "Хочу что то сладкое",
                 "Пора приготовить ужин",
                 "Может, заказать пиццу?",
-                "Салат Цезарь"
             }
         },
         {
@@ -47,23 +50,26 @@ namespace lab_4_10
                 "Может поиграть в доту?...",
                 "Нужен ли гринд?",
                 "Пора сделать перерыв",
-                "Пора пройти Isaac"
             }
         }
     };
-        private string GenerateRandomThink(TypeThink type)
+        public static Think GenerateThink()
         {
-            var templates = thoughtTemplates[type];
-            int index = rnd.Next(0, 4);
-            return templates[index];
+            Array values = Enum.GetValues(typeof(TypeThink));
+            TypeThink randomType = (TypeThink)values.GetValue(rnd.Next(values.Length));
+
+            string[] templates = thoughtTemplates[randomType];
+            int index = rnd.Next(templates.Length);
+            string content = templates[index];
+
+            Think think = new Think();
+            think.Type = randomType;
+            think.Content = content;
+
+            return think;
         }
         public TypeThink Type { get; set; }
         public string Content { get; set; }
-        public Think(TypeThink type)
-        {
-            Type = type;
-            Content = GenerateRandomThink(type);
-        }
 
         public bool GetDecision()
         {
@@ -105,6 +111,11 @@ namespace lab_4_10
                 default:
                     return false;
             }
+        }
+
+        public string GetThinkInfo()
+        {
+            return GetDecision() ? "Плохая мысль" : "хорошая мысль";
         }
     }
 }

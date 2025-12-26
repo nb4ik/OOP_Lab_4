@@ -4,22 +4,26 @@
     {
         static void Main(string[] args)
         {
-            Stack<Think> badThink = new Stack<Think>();
+            Stack<string> badThink = new Stack<string>();
 
-            Think thought1 = new Think(TypeThink.Study);
-            Think thought2 = new Think(TypeThink.Games);
-            Think thought3 = new Think(TypeThink.Food);
+            Think thoughtOne = Think.GenerateThink();
+            Console.WriteLine(thoughtOne.GetThinkInfo() + "\n");
 
-            Console.WriteLine($"Первая мысль: {thought1.Content}");
-            Console.WriteLine(thought1.GetThinkInfo());
-            Console.WriteLine($"Вторая мысль: {thought2.Content}");
-            Console.WriteLine(thought2.GetThinkInfo());
-            Console.WriteLine($"Третья мысль: {thought3.Content}");
-            Console.WriteLine(thought3.GetThinkInfo());
-
+            Console.WriteLine("Все мысли:");
             for (int i = 0; i < 3; i++)
             {
-                Think think = new Think(TypeThink.Games);
+                Think thought = Think.GenerateThink();
+                Console.WriteLine(thought.Content);
+                if (thought.GetDecision())
+                {
+                    badThink.Push(thought.Content);
+                }
+            }
+            Console.WriteLine("\nПлохие мысли:");
+
+            while (badThink.Count > 0)
+            {
+                Console.WriteLine(badThink.Pop());
             }
         }
     }
