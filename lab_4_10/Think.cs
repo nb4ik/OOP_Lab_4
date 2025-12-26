@@ -71,6 +71,7 @@ namespace lab_4_10
         public TypeThink Type { get; set; }
         public string Content { get; set; }
 
+
         public bool GetDecision()
         {
             switch (Type)
